@@ -13,13 +13,13 @@ public class Main {
 
         new MyThirdObserver("The third Observer", subject);
         new MySecondObserver("The second Observer", subject);
-        MyFirstObserver myFirstObserver = new MyFirstObserver("PE", subject);
+        MyFirstObserver myFirstObserver = new MyFirstObserver("myFirstObserver", subject);
 
         new Observer("On the fly Observer", subject) {
             @Override
             public void update() {
                 int state = subject.getState();
-                System.out.println("Hey! Subject state is: " + state);
+                System.out.println("Hey! Subject state is: " + state + ". Oh and almost forgot, they call me: \"" + ID + "\"");
             }
         };
 

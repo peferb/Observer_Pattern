@@ -19,19 +19,19 @@ public class Subject {
         notifyAllObservers();
     }
 
-    public void attach(Observer observer){
+    public void attachObserver(Observer observer){
         observers.add(observer);
     }
 
-    public void notifyAllObservers(){
+    private void notifyAllObservers(){
         for (Observer observer : observers) {
             observer.update();
         }
     }
 
-    public void removeObserverWithId(String name){
+    public void removeObserverWithId(String id){
         for (int i = 0; i < observers.size(); i++){
-            if (observers.get(i).ID.equals(name))observers.remove(i);
+            if (observers.get(i).ID.equals(id))observers.remove(i);
         }
     }
 }

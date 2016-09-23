@@ -6,14 +6,14 @@ public abstract class Observer {
     protected Subject subject;
     public final String ID;
 
-    protected Observer(String uniqueId) {
+    public Observer(String uniqueId) {
         ID = uniqueId;
     }
 
-    protected Observer(String uniqueId, Subject subject) {
+    public Observer(String uniqueId, Subject subject) {
         ID = uniqueId;
         this.subject = subject;
-        this.subject.attach(this);
+        this.subject.attachObserver(this);
     }
 
     public abstract void update();
@@ -23,6 +23,6 @@ public abstract class Observer {
     }
 
     public void resumeObserve() {
-        this.subject.attach(this);
+        this.subject.attachObserver(this);
     }
 }

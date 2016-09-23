@@ -7,7 +7,7 @@ public class MySecondObserver extends Observer{
     public MySecondObserver(String myName, Subject subject){
         super(myName);
         this.subject = subject;
-        this.subject.attach(this);
+        this.subject.attachObserver(this);
     }
 
     @Override
